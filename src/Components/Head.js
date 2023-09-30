@@ -1,10 +1,19 @@
 import React from 'react' 
 import { hamburgerPath, user_icon, youtubeLogo } from '../utils/paths'
+import { useDispatch } from 'react-redux'
+import { toggleMenu } from '../utils/appSlice';
 const Head = () => {
+
+  const dispather=useDispatch();
+  const HamburgerOnClickHandler=()=>{
+    dispather(toggleMenu());
+  }
   return (
     <div className="grid grid-flow-col p-5 m-2 shadow-lg">
       <div className="flex col-span-1">
-        <img className="h-10" alt="menu" src={hamburgerPath}/>
+        <img 
+        onClick={HamburgerOnClickHandler}
+        className="h-10 cursor-pointer" alt="menu" src={hamburgerPath}/>
         <img className="h-10 mx-2" alt="youtubeLogo" src={youtubeLogo}></img>
       </div>
       <div className="col-span-10 px-10 mx-10">
