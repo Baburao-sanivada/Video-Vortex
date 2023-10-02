@@ -9,3 +9,5 @@ export const user_icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCA
 const Google_api_key="AIzaSyB7_4AaGQ4iRkxMBJcW8O7K4AN9V4lj5YY"
 
 export const youtube_video_api="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+Google_api_key
+
+export const youtube_search_api="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
