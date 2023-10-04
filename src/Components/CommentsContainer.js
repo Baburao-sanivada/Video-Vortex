@@ -4,7 +4,6 @@ import { comments } from "../utils/MockCommentsData";
 
 const CommentItem=({data})=>{
     const {name,text,replies}=data;
-    console.log(data)
     return <div className="flex p-2 m-2 bg-gray-50">
         <img className="h-12" alt="user-icon" src={user_icon}/>
         <div className="px-2">
@@ -18,13 +17,13 @@ const CommentList=({comments})=>{
     
     return <div>
         {
-            comments.map((comment)=>{
-                return <div>
+            comments.map((comment,index)=>{
+                return (<div key={index}>
                     <CommentItem data={comment}/>
-                    <div className="pl-5 ml-2 border border-l-black">
-                        <CommentList comments={comment.replies}/>
+                    <div  className="pl-5 ml-2 border border-l-black">
+                        <CommentList  comments={comment.replies}/>
                     </div>
-                    </div>
+                    </div>)
             })
         }
     </div>
