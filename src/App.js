@@ -3,9 +3,10 @@ import './App.css';
 import Body from './Components/Body';
 import Head from './Components/Head';
 import { AppStore } from './utils/AppStore';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Router, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainContainer from './Components/MainContainer';
 import WatchPage from './Components/WatchPage';
+import SearchResultsPage from './Components/SearchResultsPage';
 
 
 const appRoute=createBrowserRouter([{
@@ -19,9 +20,14 @@ const appRoute=createBrowserRouter([{
     {
       path:"watch",
       element:<WatchPage/>
+    },
+    {
+      path:"search",
+      element:<SearchResultsPage/>
     }
 ]
 }])
+
 function App() {
   return (
     <Provider store={AppStore}>

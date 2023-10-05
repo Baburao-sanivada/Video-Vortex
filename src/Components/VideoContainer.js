@@ -37,7 +37,7 @@ const VideoContainer = () => {
   return (
     <div className='flex flex-wrap'>
       {
-        videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video.id+index} to={"/watch?v="+video.id}><VideoCard  info={video}/></Link>)
+        videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video?.id+index} to={"/watch?v="+video?.id}><VideoCard  info={video}/></Link>)
       }
     </div>
   )

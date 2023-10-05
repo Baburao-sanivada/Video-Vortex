@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SideBar = () => {
   const isMenuOpen=useSelector((store)=> store.appSlice.isMenuOpen);
   return !isMenuOpen?<></>:(
-    <div className='shadow-lg p-5 w-48'>
+    <div className='shadow-lg p-5 pt-2 w-48 border border-black'>
       <div className='my-5'>
         <ul>
           <Link to="/"><li>Home</li></Link>
