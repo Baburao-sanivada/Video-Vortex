@@ -47,7 +47,7 @@ const Head = () => {
 
 
   return (
-    <div className="sticky top-0  grid grid-flow-col py-3 px-5 mb-2 shadow-lg bg-white w-full">
+    <div className="sticky top-0 grid grid-flow-col py-3 px-5 bg-white w-full">
 
       {/* Logo and HamburgerMenu */}
       <div className="flex col-span-1 items-center mx-4">
