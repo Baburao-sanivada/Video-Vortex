@@ -47,23 +47,23 @@ const Head = () => {
 
 
   return (
-    <div className="sticky top-0 grid grid-flow-col py-3 px-5 bg-white w-full">
+    <div className="sticky top-0 grid grid-flow-col py-3 px-3 bg-white w-full">
 
       {/* Logo and HamburgerMenu */}
       <div className="flex col-span-1 items-center mx-4">
         <img 
         onClick={HamburgerOnClickHandler}
-        className="h-10 cursor-pointer" alt="menu" src={hamburgerPath}/>
+        className="h-10 cursor-pointer hidden sm:block" alt="menu" src={hamburgerPath}/>
         <img className="h-6 mx-4" alt="youtubeLogo" src={youtubeLogo}></img>
       </div>
 
       {/* Search */}
 
       <div className="col-span-10 ml-24">
-        <div className='flex flex-row'>
+        <div className='group flex flex-row'>
           <input 
           value={QueryText}
-          className="w-2/3 border border-gray-400 rounded-l-full py-1 pl-5" 
+          className="w-2/3 border border-gray-400 rounded-l-full py-1 pl-5 group-focus-within:border-sky-300" 
           type='text'
           placeholder='Search'
           onChange={(e)=>{
@@ -78,19 +78,22 @@ const Head = () => {
 
           {/* Search Button */}
           <button 
-          className="border border-gray-400 rounded-r-full py-2 px-5 flex justify-center items-center" 
-          onClick={()=>window.location.assign("search?q="+QueryText)}><GoSearch className='text-xl'/></button>
+          className="border border-gray-400 rounded-r-full py-2 px-5 flex justify-center items-center  hover:bg-gray-100" 
+          onClick={()=>window.location.assign("search?q="+QueryText)}>
+          <GoSearch className='text-xl'/></button>
         </div>
-        { showSuggestions && <div className='fixed bg-white w-96 px-5 py-2 rounded-lg shadow-lg border border-gray-100'>
+        {/* Suggestions */}
+        { showSuggestions && QueryText!="" &&
+        <div className='fixed bg-white lg:pr-[8.3rem] rounded-xl border border-gray-100 shadow-lg'><div className=' py-2 lg:w-96'>
           <ul>
-            {searchSuggestions.map(s=> <li key="s" className='m-2 hover:bg-gray-50'> <GoSearch className='text-xl'/> {s}</li>)}
+            {searchSuggestions.map(s=> <li key="s" className='hover:bg-gray-200'><div className='flex px-5 items-center'> <GoSearch className='text-lg m-2 mr-4'/> <span>{s}</span></div></li>)}
           </ul>
-        </div>}
+        </div></div>}
       </div>
 
       {/* User Icon */}
-      <div className="flex justify-center col-span-1 items-center text-3xl">
-        <BiUserCircle/>
+      <div className="flex justify-center col-span-1 items-center ">
+        <BiUserCircle className='text-4xl'/>
       </div>
     </div>
   )

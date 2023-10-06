@@ -7,9 +7,13 @@ import ShimmerUI from './ShimmerUI';
 const VideoContainer = () => {
   const [videosList,setVideosList]=useState([]);
   const [scrolledDown,setScrollDown]=useState(false);
+
+  // Called after Initial Render
   useEffect(()=>{
     getVideos();
   },[scrolledDown])
+
+  // API Call
   const getVideos=async ()=>{
     const data=await fetch(youtube_video_api);
     const json=await data.json();
@@ -20,6 +24,8 @@ const VideoContainer = () => {
     setVideosList(updatedData);
     setScrollDown(false)
   }
+
+  // Infinite Scroll
   const handleScroll = () => {
     console.log(window.innerHeight , document.documentElement.scrollTop, document.documentElement.offsetHeight)
     if (window.innerHeight + document.documentElement.scrollTop+1500 >= document.documentElement.offsetHeight) {
@@ -34,8 +40,9 @@ const VideoContainer = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Video Container
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap justify-evenly md:gap-x-2'>
       {
         videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video?.id+index} to={"/watch?v="+video?.id}><VideoCard  info={video}/></Link>)
       }

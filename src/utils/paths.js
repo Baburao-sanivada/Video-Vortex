@@ -14,6 +14,8 @@ export const youtube_search_api="http://suggestqueries.google.com/complete/searc
 
 export const Search_results_api="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q="
 
+export const channelImage_api="https://www.googleapis.com/youtube/v3/channels?part=snippet&fields=items(id%2Csnippet%2Fthumbnails)&key="+Google_api_key
+
 var nameList = [
     'Time', 'Past', 'Future', 'Dev',
     'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
