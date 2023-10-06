@@ -18,16 +18,13 @@ const VideoContainer = () => {
     const data=await fetch(youtube_video_api);
     const json=await data.json();
     var updatedData=videosList.concat(json.items);
-    console.log("hookData:",videosList);
-    console.log("API Data",json.items);
-    console.log(updatedData);
     setVideosList(updatedData);
     setScrollDown(false)
   }
 
   // Infinite Scroll
   const handleScroll = () => {
-    console.log(window.innerHeight , document.documentElement.scrollTop, document.documentElement.offsetHeight)
+    // console.log(window.innerHeight , document.documentElement.scrollTop, document.documentElement.offsetHeight)
     if (window.innerHeight + document.documentElement.scrollTop+1500 >= document.documentElement.offsetHeight) {
         setScrollDown(true);
     }

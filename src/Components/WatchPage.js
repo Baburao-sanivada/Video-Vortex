@@ -4,6 +4,7 @@ import { closeMenu, toggleMenu } from '../utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
 import { CommentsContainer } from './CommentsContainer';
 import ChatContainer from './ChatContainer';
+import WpageVideDetails from './WpageVideDetails';
 
 const WatchPage = () => {
     const dispatch=useDispatch();
@@ -13,19 +14,18 @@ const WatchPage = () => {
       dispatch(closeMenu());
     },[])
   return (
-    <div className='p-2 w-full'>
-      <div className='flex'>
+    <div className='p-2 w-full ml-10'>
+      <div className='flex flex-col'>
         <div>
-        <iframe 
-      width="800" height="400" 
-      src={"https://www.youtube.com/embed/"+VideoId} 
-      title="YouTube video player" frameBorder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowFullScreen></iframe>
+          <iframe 
+        width="800" height="400" 
+        src={"https://www.youtube.com/embed/"+VideoId} 
+        title="YouTube video player" frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowFullScreen></iframe>
         </div>
-      <ChatContainer/>
+        <WpageVideDetails videoId={VideoId}/>
       </div>
-      <CommentsContainer/>
     </div>
   )
 }

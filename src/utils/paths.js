@@ -8,13 +8,15 @@ export const user_icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCA
 
 export const Google_api_key="AIzaSyALT1lJ-gHXEWOL95DyGIjfHucAUxxYO08"
 
+export const videoDetailsApi="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key="+Google_api_key;
+
 export const youtube_video_api="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+Google_api_key
 
 export const youtube_search_api="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
 
 export const Search_results_api="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q="
 
-export const channelImage_api="https://www.googleapis.com/youtube/v3/channels?part=snippet&fields=items(id%2Csnippet%2Fthumbnails)&key="+Google_api_key
+export const channelImage_api="https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&key="+Google_api_key
 
 var nameList = [
     'Time', 'Past', 'Future', 'Dev',
