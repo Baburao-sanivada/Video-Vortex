@@ -14,7 +14,7 @@ const ChannelDetails = ({channelId,channelTitle}) => {
         const data=await fetch(channelImage_api+"&id="+channelId);
         const json=await data.json();
         setDetails(json);
-        console.log(json);
+        // console.log(json);
       }
     if(details==null) return <></>
     const imgUrl=details?.items[0].snippet?.thumbnails?.high?.url || {};
@@ -25,7 +25,7 @@ const ChannelDetails = ({channelId,channelTitle}) => {
         <img className="w-14 h-14" alt="channelImage" src={imgUrl}/>
         <div>
             <p className='font-semibold text-lg'>{channelTitle}</p>
-            <p className=''><p className='text-xs'>{abbreviateNumber(subscriberCount)} subscribers</p></p>
+            <p className='text-xs'>{abbreviateNumber(subscriberCount)} subscribers</p>
         </div>
         </div>)
 }

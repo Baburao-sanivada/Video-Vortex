@@ -18,17 +18,19 @@ const VideoCard = ({info}) => {
     const data=await fetch(channelImage_api+"&id="+channelId);
     const json=await data.json();
     const url=json?.items[0]?.snippet?.thumbnails?.high?.url;
-    console.log(url);
+    // console.log(url);
     setChannelImage(url)
   }
 
   return (
     <div className='flex flex-col m-2 w-[312px] h-[300px] hover:bg-gray-50 rounded-lg'>
+        {/* Main Image - Thumbnail*/}
         <img className="rounded-lg mb-2" alt="thumbnail" src={thumbnails?.medium?.url}/>
+
         <div>
             {/* Image and Title Div */}
             <div className='flex flex-row items-center'>
-              <img className='w-8 h-8 mr-1 rounded-full' src={channelImage}/>
+              <img className='w-10 h-10 mr-1 rounded-full' src={channelImage}/>
               <p className='font-semibold line-clamp-2 text-base font-sans'>{title}</p>
             </div>
 
