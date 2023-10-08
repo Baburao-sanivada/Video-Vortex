@@ -18,6 +18,7 @@ export const Search_results_api="https://youtube.googleapis.com/youtube/v3/searc
 
 export const channelImage_api="https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&key="+Google_api_key
 
+export const video_comments_details_api="https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyALT1lJ-gHXEWOL95DyGIjfHucAUxxYO08&textFormat=plainText&part=snippet&maxResults=100&order=relevance&videoId="
 var nameList = [
     'Time', 'Past', 'Future', 'Dev',
     'Fly', 'Flying', 'Soar', 'Soaring', 'Power', 'Falling',
