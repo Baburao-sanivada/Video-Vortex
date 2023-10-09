@@ -6,6 +6,7 @@ import { CommentsContainer } from './CommentsContainer';
 import ChatContainer from './ChatContainer';
 import WpageVideDetails from './WpageVideDetails';
 import ReactPlayer from 'react-player';
+import Recommendations from './Recommendations';
 
 const WatchPage = () => {
     const dispatch=useDispatch();
@@ -29,8 +30,8 @@ const WatchPage = () => {
         </div>
         <WpageVideDetails videoId={VideoId}/>
       </div>
-      <div className='bg-green-200 col-span-4'>
-            SubDiv
+      <div className='col-span-4 p-1'>
+          <Recommendations/>
       </div>
     </div>
   )

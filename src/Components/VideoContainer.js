@@ -3,10 +3,13 @@ import { youtube_video_api } from '../utils/paths';
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom';
 import ShimmerUI from './ShimmerUI';
+import { useDispatch } from 'react-redux';
+import { setChannelId } from '../utils/channelIdSlice';
 
 const VideoContainer = () => {
   const [videosList,setVideosList]=useState([]);
   const [scrolledDown,setScrollDown]=useState(false);
+  const dispatcher=useDispatch();
 
   // Called after Initial Render
   useEffect(()=>{
@@ -18,6 +21,7 @@ const VideoContainer = () => {
     const data=await fetch(youtube_video_api);
     const json=await data.json();
     var updatedData=videosList.concat(json.items);
+    // console.log(updatedData)
     setVideosList(updatedData);
     setScrollDown(false)
   }
@@ -41,7 +45,10 @@ const VideoContainer = () => {
   return (
     <div className='flex flex-wrap justify-evenly md:gap-x-2'>
       {
-        videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video?.id+index} to={"/watch?v="+video?.id}><VideoCard  info={video}/></Link>)
+        videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video?.id+index}
+         to={"/watch?v="+video?.id} 
+         onClick={()=>{dispatcher(setChannelId(video?.snippet?.channelId))
+        }}><VideoCard  info={video}/></Link>)
       }
     </div>
   )

@@ -8,6 +8,8 @@ export const user_icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCA
 
 export const Google_api_key="AIzaSyALT1lJ-gHXEWOL95DyGIjfHucAUxxYO08"
 
+export const video_recommendations_api=`https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=50&regionCode=in&key=${Google_api_key}&channelId=`
+
 export const videoDetailsApi="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key="+Google_api_key;
 
 export const youtube_video_api="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+Google_api_key

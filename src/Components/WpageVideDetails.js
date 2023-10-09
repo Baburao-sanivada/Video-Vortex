@@ -24,7 +24,7 @@ const WpageVideDetails = ({videoId}) => {
     const fetchData=async ()=>{
         const data=await fetch(videoDetailsApi+"&id="+videoId);
         const json=await data.json();
-        console.log(json.items[0])
+        // console.log(json.items[0])
         setvideoDetails(json?.items[0]);
     }
     if(tags!=null){
@@ -37,7 +37,7 @@ const WpageVideDetails = ({videoId}) => {
             <div className='my-2 font-semibold text-lg'>{title}</div>
 
             {/* Channel Details And lIkes */}
-            <div className='flex flex-row items-center'>
+            <div className='flex flex-row items-center my-2'>
                 <ChannelDetails channelId={channelId} channelTitle={channelTitle}/>
                 <button className='mx-4 p-2 px-4 bg-black text-white rounded-full md:mr-36 lg:mr-44 ml-6'>Subscribe</button>
                 <div className='m-2 ml-4 flex items-center bg-gray-100 p-2 px-6 rounded-full justify-between'>
@@ -59,7 +59,7 @@ const WpageVideDetails = ({videoId}) => {
             <div className='bg-gray-100 p-2 rounded-xl px-4'>
                 {/* viewCount and Date */}
                 <div className='flex'>
-                    <p className='flex'><p className='font-semibold mr-1'>{abbreviateNumber(viewCount)}</p> views</p>
+                    <p className='flex'><span className='font-semibold mr-1'>{abbreviateNumber(viewCount)}</span> views</p>
                     <p className='mx-2 font-medium'>{publishedAt.split("T")[0]}</p>
                     <p className='text-blue-800'>#{tags[0]}</p>
                     <p className='text-blue-800'>#{tags[1]}</p>
@@ -71,7 +71,7 @@ const WpageVideDetails = ({videoId}) => {
                 {/* Tags */}
                 <div className='flex'>
                     {
-                        tags_arr.map(tag => <p>#{tag}</p>)
+                        tags_arr.map((tag,index) => <p key={index}>#{tag}</p>)
                     }
                 </div>
             </div>
