@@ -7,6 +7,7 @@ import { AddCacheItem } from '../utils/searchCacheSlice';
 import {BiUserCircle} from "react-icons/bi";
 import {GoSearch} from "react-icons/go"
 import {AiOutlineMenu} from "react-icons/ai";
+import {MdOutlineDarkMode} from "react-icons/md"
 
 const Head = () => {
 
@@ -15,6 +16,16 @@ const Head = () => {
   const [searchSuggestions,setSearchSuggestions]=useState([]);
   const [showSuggestions,setshowSuggestions]=useState(false);
   const suggestions=useSelector((store)=> store.search);
+
+  const [darkMode,setDarkMode]=useState(false);
+
+  const toggletheme=()=>{
+    console.log("Toggle theme Called ",darkMode)
+    console.log(localStorage.getItem('darkMode') === 'true')
+    setDarkMode(!darkMode)
+    
+    document.documentElement.classList.toggle('dark', darkMode);
+  }
 
 
   const HamburgerOnClickHandler=()=>{
@@ -47,7 +58,7 @@ const Head = () => {
 
 
   return (
-    <div className="sticky top-0 grid grid-flow-col py-3 px-3 bg-white w-full">
+    <div className="sticky top-0 grid grid-flow-col py-3 px-3 bg-white dark:bg-slate-800 w-full">
 
       {/* Logo and HamburgerMenu */}
       <div className="flex col-span-1 items-center mx-4">
@@ -97,6 +108,9 @@ const Head = () => {
       <div className="flex justify-center col-span-1 items-center ">
         <BiUserCircle className='text-4xl'/>
       </div>
+
+      {/* DarkMode Icon */}
+      <MdOutlineDarkMode className="hover:bg-gray-100" onClick={()=>toggletheme()}/>
     </div>
   )
 }
