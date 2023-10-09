@@ -19,6 +19,19 @@ const Recommendations = () => {
     }
   return recVideoList==null?<div>
     <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdeVideo/>
   </div>:(
     <div>
       {

@@ -24,7 +24,6 @@ const WatchPage = () => {
               controls
               width="800px"
               height="505px"
-      
               playing={true}
             />
         </div>

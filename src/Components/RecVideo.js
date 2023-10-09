@@ -28,7 +28,7 @@ const RecVideo = ({data}) => {
 
 
   return (
-    <div className='grid grid-cols-12 flex mb-3'>
+    <div className='grid grid-cols-12 flex mb-3 ml-1'>
         <div className='mr-2 col-span-5'>
             <img className='h-24 w-80 rounded-lg ' alt="thumbnail" src={url}/>
         </div>

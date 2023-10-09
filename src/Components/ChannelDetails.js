@@ -22,7 +22,7 @@ const ChannelDetails = ({channelId,channelTitle}) => {
 
 
     return (<div className='flex items-center'>
-        <img className="w-14 h-14 mr-1" alt="channelImage" src={imgUrl}/>
+        <img className="w-14 h-14 mr-1 rounded-full" alt="channelImage" src={imgUrl}/>
         <div>
             <p className='font-semibold text-lg'>{channelTitle}</p>
             <p className='text-xs'>{abbreviateNumber(subscriberCount)} subscribers</p>
