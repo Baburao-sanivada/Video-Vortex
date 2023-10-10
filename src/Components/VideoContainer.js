@@ -43,7 +43,7 @@ const VideoContainer = () => {
 
   // Video Container
   return (
-    <div className='flex flex-wrap justify-evenly md:gap-x-2'>
+    <div className='flex flex-wrap justify-evenly md:gap-x-2 dark:text-slate-300'>
       {
         videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video?.id+index}
          to={"/watch?v="+video?.id} 

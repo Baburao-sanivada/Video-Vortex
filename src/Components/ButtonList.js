@@ -5,7 +5,7 @@ const list=["All","Live","Gaming","Cricket","Music","Movies","Comedy","Action","
 
 const ButtonList = () => {
   return (
-    <div className='flex flex-row ml-4'>
+    <div className='flex flex-row ml-4 dark:bg-slate-800 dark:text-slate-300'>
       {
         list.map((item,index)=> <Button key={index} name={item}/>)
       }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react' 
-import { hamburgerPath, user_icon, youtubeLogo } from '../utils/paths'
+import youtubelogoLightMode from "../utils/Images/youtubelogoLightMode.png"
+import youtubelogoDarkMode from "../utils/Images/yt-logoDrakMode.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice';
 import {youtube_search_api} from "../utils/paths"
@@ -8,6 +9,8 @@ import {BiUserCircle} from "react-icons/bi";
 import {GoSearch} from "react-icons/go"
 import {AiOutlineMenu} from "react-icons/ai";
 import {MdOutlineDarkMode} from "react-icons/md"
+import {MdOutlineLightMode} from "react-icons/md"
+import {IoIosMenu} from "react-icons/io"
 
 const Head = () => {
 
@@ -20,11 +23,10 @@ const Head = () => {
   const [darkMode,setDarkMode]=useState(false);
 
   const toggletheme=()=>{
-    console.log("Toggle theme Called ",darkMode)
-    console.log(localStorage.getItem('darkMode') === 'true')
-    setDarkMode(!darkMode)
     
+    setDarkMode(!darkMode);
     document.documentElement.classList.toggle('dark', darkMode);
+    
   }
 
 
@@ -62,10 +64,10 @@ const Head = () => {
 
       {/* Logo and HamburgerMenu */}
       <div className="flex col-span-1 items-center mx-4">
-        <img 
+        <IoIosMenu 
         onClick={HamburgerOnClickHandler}
-        className="h-10 cursor-pointer hidden sm:block" alt="menu" src={hamburgerPath}/>
-        <img className="h-6 mx-4" alt="youtubeLogo" src={youtubeLogo}></img>
+        className="text-3xl dark:text-white cursor-pointer hidden sm:block"/>
+        <img className="h-6 mx-4" alt="youtubeLogo" src={!darkMode?youtubelogoDarkMode:youtubelogoLightMode}></img>
       </div>
 
       {/* Search */}
@@ -74,7 +76,7 @@ const Head = () => {
         <div className='group flex flex-row'>
           <input 
           value={QueryText}
-          className="w-2/3 border border-gray-400 rounded-l-full py-1 pl-5 group-focus-within:border-sky-300" 
+          className="w-2/3 border border-gray-400 rounded-l-full py-1 pl-5 group-focus-within:border-sky-300 dark:bg-slate-800" 
           type='text'
           placeholder='Search'
           onChange={(e)=>{
@@ -110,7 +112,9 @@ const Head = () => {
       </div>
 
       {/* DarkMode Icon */}
-      <MdOutlineDarkMode className="hover:bg-gray-100" onClick={()=>toggletheme()}/>
+      <div className='flex items-center'>
+        {darkMode?<MdOutlineDarkMode className="text-2xl" onClick={()=>toggletheme()}/>:<MdOutlineLightMode className="text-2xl" onClick={()=>toggletheme()}/>}
+      </div>
     </div>
   )
 }
