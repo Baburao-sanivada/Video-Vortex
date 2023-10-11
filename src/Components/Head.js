@@ -81,6 +81,8 @@ const Head = () => {
           placeholder='Search'
           onChange={(e)=>{
             setQueryText(e.target.value);
+
+            
           }}
           onFocus={()=>{
             setshowSuggestions(true);
