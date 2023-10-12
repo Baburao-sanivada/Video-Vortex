@@ -5,11 +5,14 @@ import { useSearchParams } from 'react-router-dom'
 import { Google_api_key, Search_results_api } from '../utils/paths'
 import SearchVideoCard from './SearchVideoCard'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { setChannelId } from '../utils/channelIdSlice'
 
 const SearchResultsPage = () => {
   const [params]=useSearchParams();
   const query=params.get("q");
   const [searchresults,setSearchResults]=useState([]);
+  const dispatcher=useDispatch();
   useEffect(()=>{
     getSearchData();
   },[])
@@ -27,6 +30,10 @@ const SearchResultsPage = () => {
         searchresults.map((result)=> <Link key={result?.id?.videoId} to={"/watch?v="+result?.id?.videoId}>
         <SearchVideoCard 
         data={result?.snippet}/>
+        onClick={()=>{
+          dispatcher(setChannelId(result?.snippet?.channelId))
+          console.log(result?.snippet?.channelId);
+        }}
         </Link>
         )
       }
