@@ -27,13 +27,16 @@ const SearchResultsPage = () => {
   return (
     <div className='p-2 w-full'>
       {
-        searchresults.map((result)=> <Link key={result?.id?.videoId} to={"/watch?v="+result?.id?.videoId}>
+        searchresults.map((result)=> <Link 
+        key={result?.id?.videoId} 
+        to={"/watch?v="+result?.id?.videoId} 
+        onClick={()=>{
+          console.log("Clicked on");
+          dispatcher(setChannelId(result?.snippet?.channelId))
+          console.log("channel Id ",result?.snippet?.channelId);
+        }}>
         <SearchVideoCard 
         data={result?.snippet}/>
-        onClick={()=>{
-          dispatcher(setChannelId(result?.snippet?.channelId))
-          console.log(result?.snippet?.channelId);
-        }}
         </Link>
         )
       }
