@@ -35,6 +35,9 @@ const SearchResultsPage = () => {
           dispatcher(setChannelId(result?.snippet?.channelId))
           console.log("channel Id ",result?.snippet?.channelId);
         }}>
+
+
+          
         <SearchVideoCard 
         data={result?.snippet}/>
         </Link>
