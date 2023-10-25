@@ -21,6 +21,7 @@ const Head = () => {
   const suggestions=useSelector((store)=> store.search);
 
   const [darkMode,setDarkMode]=useState(false);
+  document.documentElement.classList.toggle('dark', darkMode);
 
   const toggletheme=()=>{
     
@@ -67,7 +68,7 @@ const Head = () => {
         <IoIosMenu 
         onClick={HamburgerOnClickHandler}
         className="text-3xl dark:text-white cursor-pointer hidden sm:block"/>
-        <img className="h-6 mx-4" alt="youtubeLogo" src={!darkMode?youtubelogoDarkMode:youtubelogoLightMode}></img>
+        <img className="h-6 mx-4" alt="youtubeLogo" src={darkMode?youtubelogoDarkMode:youtubelogoLightMode}></img>
       </div>
 
       {/* Search */}
@@ -95,7 +96,7 @@ const Head = () => {
           <button 
           className="border border-gray-400 rounded-r-full py-2 px-5 flex justify-center items-center  hover:bg-gray-100" 
           onClick={()=>window.location.assign("search?q="+QueryText)}>
-          <GoSearch className='text-xl'/></button>
+          <GoSearch className='text-xl dark:text-white'/></button>
         </div>
         {/* Suggestions */}
         { showSuggestions && QueryText!="" &&
@@ -110,12 +111,12 @@ const Head = () => {
 
       {/* User Icon */}
       <div className="flex justify-center col-span-1 items-center ">
-        <BiUserCircle className='text-4xl'/>
+        <BiUserCircle className='text-4xl dark:text-white'/>
       </div>
 
       {/* DarkMode Icon */}
       <div className='flex items-center'>
-        {darkMode?<MdOutlineDarkMode className="text-2xl" onClick={()=>toggletheme()}/>:<MdOutlineLightMode className="text-2xl" onClick={()=>toggletheme()}/>}
+        {!darkMode?<MdOutlineDarkMode className="text-2xl" onClick={()=>toggletheme()}/>:<MdOutlineLightMode className="text-2xl text-white" onClick={()=>toggletheme()}/>}
       </div>
     </div>
   )

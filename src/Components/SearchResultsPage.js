@@ -16,7 +16,7 @@ const SearchResultsPage = () => {
   useEffect(()=>{
     getSearchData();
   },[])
-  console.log(searchresults);
+  // console.log(searchresults);
   const getSearchData=async ()=>{
     const data=await fetch(Search_results_api+query+"&key="+Google_api_key);
     const json=await data.json();
@@ -25,7 +25,7 @@ const SearchResultsPage = () => {
   } 
 
   return (
-    <div className='p-2 w-full'>
+    <div className='p-2 w-full dark:bg-slate-800'>
       {
         searchresults.map((result)=> <Link 
         key={result?.id?.videoId} 
