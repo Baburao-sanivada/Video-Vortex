@@ -14,7 +14,6 @@ import { PublishedTimeOfVideo } from '../utils/PublishedData';
 const WpageVideDetails = ({videoId}) => {
 
     const [videoDetails,setvideoDetails]=useState(null);
-
     useEffect(()=>{
         fetchData();
     },[])
@@ -66,9 +65,9 @@ const WpageVideDetails = ({videoId}) => {
                 <div className='lg:flex'>
                     <p className='flex'><span className='font-semibold mr-2'>{abbreviateNumber(viewCount)}</span> views</p>
                     <p className='ml-2 font-medium'>{PublishedTimeOfVideo(publishedAt)}</p>
-                    <p className='text-blue-800'>#{tags[0]}</p>
-                    <p className='text-blue-800'>#{tags[1]}</p>
-                    <p className='text-blue-800'>#{tags[2]}</p>
+                    {tags!=null && tags.length>0} && <p className='text-blue-800'>#{tags[0]}</p>
+                    {tags!=null && tags.length>1} && <p className='text-blue-800'>#{tags[1]}</p>
+                    {tags!=null && tags.length>2} && <p className='text-blue-800'>#{tags[2]}</p>
                 </div>
 
                 {/* Description */}

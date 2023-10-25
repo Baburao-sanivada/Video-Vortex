@@ -111,7 +111,7 @@ const Head = () => {
 
       {/* User Icon */}
       <div className="flex justify-center col-span-1 items-center ">
-        <BiUserCircle className='text-4xl dark:text-white'/>
+        <BiUserCircle className='text-4xl font-normal dark:text-white'/>
       </div>
 
       {/* DarkMode Icon */}
