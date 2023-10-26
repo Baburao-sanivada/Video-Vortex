@@ -11,6 +11,7 @@ import {AiOutlineMenu} from "react-icons/ai";
 import {MdOutlineDarkMode} from "react-icons/md"
 import {MdOutlineLightMode} from "react-icons/md"
 import {IoIosMenu} from "react-icons/io"
+import { Link } from 'react-router-dom';
 
 const Head = () => {
 
@@ -103,7 +104,11 @@ const Head = () => {
         <div className='fixed bg-white rounded-xl border border-gray-100 shadow-lg'>
           <div className=' py-2'>
           <ul>
-            {searchSuggestions.map((s,index)=> <li key={"s"+index} className='hover:bg-gray-200 '><div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'> <GoSearch className='text-lg m-2 mr-4'/> <span>{s}</span></div></li>)}
+            {searchSuggestions.map((s,index)=> 
+            (<li key={"s"+index} className='hover:bg-gray-100'>
+              <div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'> 
+              <GoSearch className='text-lg m-2 mr-4'/> <span className='mb-1'>{s}</span>
+              </div></li>))}
           </ul>
         </div>
         </div>}
