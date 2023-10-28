@@ -37,37 +37,37 @@ const WpageVideDetails = ({videoId}) => {
             <div className='my-2 font-semibold text-lg'>{title}</div>
 
             {/* Channel Details And lIkes */}
-            <div className='flex items-center my-2 justify-between'>
+            <div className='flex items-center my-2 justify-between '>
                 <div className='flex items-center'>
                     <ChannelDetails channelId={channelId} channelTitle={channelTitle}/>
-                    <div><button className='mx-4 p-2 px-4 bg-black text-white rounded-full'>Subscribe</button></div>
+                    <div><button className='mx-4 p-2 px-4 bg-black text-white dark:bg-white dark:text-black rounded-full'>Subscribe</button></div>
                 </div>
                 <div className='flex items-center'>
-                    <div className='m-2  flex items-center bg-gray-100 p-2 px-6 rounded-full'>
+                    <div className='m-2  flex items-center bg-gray-100 dark:bg-slate-800 p-2 px-6 rounded-full dark:border border-white'>
                         <BiLike className='text-xl mr-1'/>
                         <p className='mx-1 text-sm'>{abbreviateNumber(likeCount)}</p>
                         <p className='mx-1 '>|</p>
                         <BiDislike className='text-xl ml-1'/>
                     </div>
-                    <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between'>
+                    <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between  dark:bg-slate-800 dark:border border-white'>
                         <PiShareFatThin className='text-xl mr-1'/>
                         <p className='font-medium ml-1'>Share</p>
                     </div>
-                    <div className='bg-gray-100 p-2 rounded-full ml-2'>
+                    <div className='bg-gray-100 p-2 rounded-full ml-2 dark:bg-slate-800 dark:border border-white'>
                         <FiMoreHorizontal/>
                 </div>
                 </div>
             </div>
 
             {/* View count,Date,Tags and Description */}
-            <div className='bg-gray-100 p-2 rounded-xl px-4'>
+            <div className='bg-gray-100 p-2 rounded-xl px-4 dark:bg-slate-600 '>
                 {/* viewCount and Date */}
                 <div className='lg:flex'>
                     <p className='flex'><span className='font-semibold mr-2'>{abbreviateNumber(viewCount)}</span> views</p>
                     <p className='ml-2 font-medium'>{PublishedTimeOfVideo(publishedAt)}</p>
-                    {tags!=null && tags.length>0} && <p className='text-blue-800'>#{tags[0]}</p>
-                    {tags!=null && tags.length>1} && <p className='text-blue-800'>#{tags[1]}</p>
-                    {tags!=null && tags.length>2} && <p className='text-blue-800'>#{tags[2]}</p>
+                    {tags!=null && tags.length>0} && <p className='text-blue-800 dark:text-blue-500'>#{tags[0]}</p>
+                    {tags!=null && tags.length>1} && <p className='text-blue-800 dark:text-blue-500'>#{tags[1]}</p>
+                    {tags!=null && tags.length>2} && <p className='text-blue-800 dark:text-blue-500'>#{tags[2]}</p>
                 </div>
 
                 {/* Description */}

@@ -34,11 +34,11 @@ const RecVideo = ({data}) => {
         </div>
         <div className='col-span-7'>
             <p className='line-clamp-2 mt-1 font-semibold text-sm'>{title}</p>
-            <p className='line-clamp-1 text-sm text-gray-700'>{channelTitle}</p>
+            <p className='line-clamp-1 text-sm text-gray-700 dark:text-slate-300'>{channelTitle}</p>
             <div className='flex line-clamp-1 text-sm text-gray-500 items-center'>
-                <p className='mr-1'>{abbreviateNumber(viewCount)} views</p>
-                <span className='mx-1'>.</span>
-                <p className=''>{PublishedTimeOfVideo(publishedAt)}</p>
+                <p className='mr-1 dark:text-slate-200 '>{abbreviateNumber(viewCount)} views</p>
+                <span className='mx-1 dark:text-slate-200 '>.</span>
+                <p className='dark:text-slate-200 '>{PublishedTimeOfVideo(publishedAt)}</p>
             </div>
         </div>
     </div>

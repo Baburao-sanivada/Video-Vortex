@@ -20,7 +20,7 @@ const ChatContainer = () => {
     },[])
 
   return (
-    <div className='border border-black w-full  p-2 mx-10 rounded-lg shadow-lg'>
+    <div className='border border-black w-full  p-2 mb-1 rounded-lg shadow-lg dark:border-white'>
     <div className='flex flex-col-reverse overflow-y-scroll h-[380px]'>
         {chatItems.map((chat,index)=> <ChatItem key={chat.name+index} name={chat.name} text={chat.text}/>)}
     </div>
@@ -28,11 +28,11 @@ const ChatContainer = () => {
         e.preventDefault();
         // dispatch(AddChatItem({name:"BabuRao" ,text:liveText}))
     }}>
-            <input className="border border-black rounded-sm shadow-lg ml-4 px-2" value={liveText} type="text" 
+            <input className="border border-black rounded-sm shadow-lg ml-4 px-2 dark:border-white dark:bg-slate-700" value={liveText} type="text" 
             onChange={(e)=>{
                 setLiveText(e.target.value)
             }}/>
-            <button className='font-bold px-2 py-1 mx-2 bg-green-100'
+            <button className='font-bold px-2 py-1 mx-2 bg-green-100 dark:bg-slate-500'
              onClick={()=>{
                 dispatch(AddChatItem({name:"BabuRao" ,text:liveText}))
                 setLiveText("")

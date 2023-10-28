@@ -4,7 +4,7 @@ import { comments } from "../utils/MockCommentsData";
 
 const CommentItem=({data})=>{
     const {name,text,replies}=data;
-    return <div className="flex p-2 m-2 bg-gray-50">
+    return <div className="flex p-2 m-2 bg-gray-50 dark:bg-slate-800 dark:text-white">
         <img className="h-12" alt="user-icon" src={user_icon}/>
         <div className="px-2">
             <p>{name}</p>
