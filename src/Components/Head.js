@@ -11,10 +11,10 @@ import {AiOutlineMenu} from "react-icons/ai";
 import {MdOutlineDarkMode} from "react-icons/md"
 import {MdOutlineLightMode} from "react-icons/md"
 import {IoIosMenu} from "react-icons/io"
-import { Link } from 'react-router-dom';
+import { Link, Router, useNavigate } from 'react-router-dom';
 
 const Head = () => {
-
+  const navigate=useNavigate();
   const [QueryText,setQueryText]=useState("")
   const dispather=useDispatch();
   const [searchSuggestions,setSearchSuggestions]=useState([]);
@@ -83,8 +83,6 @@ const Head = () => {
           placeholder='Search'
           onChange={(e)=>{
             setQueryText(e.target.value);
-
-            
           }}
           onFocus={()=>{
             setshowSuggestions(true);
@@ -96,7 +94,8 @@ const Head = () => {
           {/* Search Button */}
           <button 
           className="border border-gray-400 rounded-r-full py-2 px-5 flex justify-center items-center  hover:bg-gray-100" 
-          onClick={()=>window.location.assign("search?q="+QueryText)}>
+          onClick={()=>{
+          navigate("/search?q="+QueryText,{ relative: "path" })}}>
           <GoSearch className='text-xl dark:text-white'/></button>
         </div>
         {/* Suggestions */}
@@ -106,9 +105,8 @@ const Head = () => {
           <ul>
             {searchSuggestions.map((s,index)=> 
             (<li key={"s"+index} className='hover:bg-gray-100'>
-              <div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'> 
-              <GoSearch className='text-lg m-2 mr-4'/> <span className='mb-1'>{s}</span>
-              </div></li>))}
+              <Link to={"/search?q="+s} onClick={()=>setQueryText(s)}><div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'><GoSearch className='text-lg m-2 mr-4'/> <span className='mb-1'>{s}</span></div></Link>
+              </li>))}
           </ul>
         </div>
         </div>}

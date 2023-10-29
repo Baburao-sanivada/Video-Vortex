@@ -16,7 +16,7 @@ const RecVideo = ({data}) => {
         const data=await fetch(videoDetailsApi+"&id="+videoId);
         const jsondata=await data.json();
         setVideoDetails(jsondata?.items[0]);
-        console.log(jsondata);
+        // console.log(jsondata);
     }
     // Load Shimmer UI Until it Reloads
     if(videoDetails==null) return <div></div>

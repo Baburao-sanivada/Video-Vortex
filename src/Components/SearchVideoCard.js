@@ -4,7 +4,7 @@ import { channelImage_api } from '../utils/paths';
 import { PublishedTimeOfVideo } from '../utils/PublishedData';
 
 const SearchVideoCard = ({data}) => {
-  console.log(data);
+  // console.log(data);
   const [details,setDetails]=useState(null);
     
         

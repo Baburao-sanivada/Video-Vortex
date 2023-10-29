@@ -3,40 +3,49 @@ import './App.css';
 import Body from './Components/Body';
 import Head from './Components/Head';
 import { AppStore } from './utils/AppStore';
-import { Router, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Outlet, Router, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainContainer from './Components/MainContainer';
-import WatchPage from './Components/WatchPage';
-import SearchResultsPage from './Components/SearchResultsPage';
+import { Suspense, lazy } from 'react';
 
 
-const appRoute=createBrowserRouter([{
-  path:"/",
-  element:<Body/>,
-  children:[
-    {
-      path:"/",
-      element:<MainContainer/>
-    },
-    {
-      path:"watch",
-      element:<WatchPage />
-    },
-    {
-      path:"search",
-      element:<SearchResultsPage/>
-    }
-]
-}])
+const WatchPage = lazy(() => import("../src/Components/WatchPage") );
+const SearchResultsPage = lazy(() => import('../src/Components/SearchResultsPage'));
+
+export const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element : <App />,
+    errorElement : <></>,
+    children:[
+      {
+        path: "/",
+        element: <Body />,
+        children:[
+          {
+            path:"/",
+            element: <MainContainer />
+          },
+          {
+            path: "watch",
+            element: <Suspense><WatchPage /></Suspense>,
+          },
+          {
+            path: "search",
+            element: <Suspense><SearchResultsPage /></Suspense>,
+          },
+        ]
+      },
+    ]
+  }
+])
+
 
 function App() {
   return (
     <Provider store={AppStore}>
-      <div className="App">
-        <Head/>
-        <RouterProvider router={appRoute}/>
-      </div>
+      <Head />
+      <Outlet />
     </Provider>
-  );
+  )
 }
-
 export default App;
