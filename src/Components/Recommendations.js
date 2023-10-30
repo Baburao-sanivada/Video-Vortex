@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { video_recommendations_api } from '../utils/paths';
 import RecVideo from './RecVideo';
 import ShimmerRecommemdeVideo from './ShimmerRecommemdeVideo';
+import { Link } from 'react-router-dom';
 
 const Recommendations = () => {
     const channelId=useSelector((store)=> store.channelId.channelId);
@@ -35,7 +36,7 @@ const Recommendations = () => {
   </div>:(
     <div>
       {
-        recVideoList.map((recvideo)=> <RecVideo data={recvideo}/> )
+        recVideoList.map((recvideo)=> <Link to={"/watch?v="+recvideo?.contentDetails?.upload?.videoId}><RecVideo data={recvideo}/></Link> )
       }
     </div>
   )
