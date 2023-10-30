@@ -1,5 +1,4 @@
 import React from 'react'
-import { user_icon } from '../utils/paths'
 import { BiUserCircle } from 'react-icons/bi'
 
 // Representation of Each Chat Item

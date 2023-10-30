@@ -1,6 +1,6 @@
 import React, { useEffect ,useState} from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Google_api_key, Search_results_api } from '../utils/paths'
+import { Google_api_key, Search_results_api } from '../utils/constants'
 import SearchVideoCard from './SearchVideoCard'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'

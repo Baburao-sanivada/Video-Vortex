@@ -1,6 +1,6 @@
 import React from 'react'
 import SideBar from './SideBar'
-import { BrowserRouter, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const Body = () => {
   return (

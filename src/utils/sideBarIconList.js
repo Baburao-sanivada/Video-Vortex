@@ -1,3 +1,5 @@
+// Search Bar Icons and Names
+
 // Home
 import {AiOutlineHome} from "react-icons/ai";
 // shorts

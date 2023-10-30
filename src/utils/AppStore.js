@@ -4,7 +4,7 @@ import searchCacheSlice from "./searchCacheSlice";
 import chatSlice from "./chatSlice";
 import channelIdSlice from "./channelIdSlice";
 
-
+// AppStore Which Contains Multiple Slices
 export const AppStore=configureStore({
     reducer:{
         appSlice:appSlice,

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// AppSlice to Toggle the Side Bar
 const appSlice=createSlice({
     name:"appSlice",
     initialState:{

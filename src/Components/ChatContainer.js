@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ChatItem from './ChatItem'
 import { useDispatch, useSelector } from 'react-redux'
 import { AddChatItem } from '../utils/chatSlice';
-import { generateRandomName, getRandomText } from '../utils/paths';
+import { generateRandomName, getRandomText } from '../utils/constants';
 
 // Live Chat
 const ChatContainer = () => {

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
+// Storing Cache - Debouncing
 const searchCache=createSlice({
     name:"search",
     initialState:{},

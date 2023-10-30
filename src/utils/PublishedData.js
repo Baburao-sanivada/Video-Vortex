@@ -16,6 +16,7 @@ export const PublishedTimeOfVideo = (publishedAt) => {
 			);
 		} else {
 			if(currentDate.getDate() - publishedDate.getDate()==0) return "Today";
+			if(currentDate.getDate() - publishedDate.getDate()==1) return "1 day ago";
 			return (
 				currentDate.getDate() - publishedDate.getDate() + " days ago"
 			);

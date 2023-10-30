@@ -1,7 +1,6 @@
 import React, { useEffect,useState } from 'react'
-import { video_comments_details_api } from '../utils/paths';
+import { video_comments_details_api } from '../utils/constants';
 import VideoComment from './VideoComment';
-import { abbreviateNumber } from 'js-abbreviation-number';
 
 // Comments in the Watch Page
 const VideoCommentContainer = ({videoId,commentCount}) => {

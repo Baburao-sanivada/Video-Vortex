@@ -3,15 +3,14 @@ import youtubelogoLightMode from "../utils/Images/youtubelogoLightMode.png"
 import youtubelogoDarkMode from "../utils/Images/yt-logoDrakMode.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice';
-import {youtube_search_api} from "../utils/paths"
+import {youtube_search_api} from "../utils/constants"
 import { AddCacheItem } from '../utils/searchCacheSlice';
 import {BiUserCircle} from "react-icons/bi";
 import {GoSearch} from "react-icons/go"
-import {AiOutlineMenu} from "react-icons/ai";
 import {MdOutlineDarkMode} from "react-icons/md"
 import {MdOutlineLightMode} from "react-icons/md"
 import {IoIosMenu} from "react-icons/io"
-import { Link, Router, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Head = () => {
   const navigate=useNavigate();

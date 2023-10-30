@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { closeMenu, toggleMenu } from '../utils/appSlice';
+import { useDispatch } from 'react-redux'
+import { closeMenu } from '../utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
 import ChatContainer from './ChatContainer';
 import WpageVideoDetails from './WpageVideoDetails';

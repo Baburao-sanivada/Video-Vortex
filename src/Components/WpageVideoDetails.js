@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { videoDetailsApi } from '../utils/paths';
-
+import { videoDetailsApi } from '../utils/constants';
 import ChannelDetails from './ChannelDetails';
 import { abbreviateNumber } from 'js-abbreviation-number';
 import {BiLike} from "react-icons/bi"

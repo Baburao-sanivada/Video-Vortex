@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Slice to Store the channel Id in Global State
 const channelIdSlice=createSlice({
     name:"channelId",
     initialState: {channelId:null},
     reducers:{
         setChannelId:(state,action)=>{
-            // console.log("channel id :"+action.payload)
             state.channelId=action.payload;
         }
     }

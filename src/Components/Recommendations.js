@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { video_recommendations_api } from '../utils/paths';
+import { video_recommendations_api } from '../utils/constants';
 import RecVideo from './RecVideo';
 import ShimmerRecommemdedVideo from './ShimmerRecommemdedVideo';
 import { Link } from 'react-router-dom';

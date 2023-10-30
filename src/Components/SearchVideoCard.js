@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
-import { channelImage_api } from '../utils/paths';
+import { channelImage_api } from '../utils/constants';
 import { PublishedTimeOfVideo } from '../utils/PublishedData';
 
 // Each Video Card in Search Results Page

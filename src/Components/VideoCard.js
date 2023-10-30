@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import { abbreviateNumber } from 'js-abbreviation-number';
-import { channelImage_api } from '../utils/paths';
+import { channelImage_api } from '../utils/constants';
 import { useSelector } from 'react-redux';
 
 // Video Card for each video in Home Screen/Home Page

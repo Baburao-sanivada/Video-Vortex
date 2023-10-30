@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from 'react'
-import { youtube_video_api } from '../utils/paths';
+import { youtube_video_api } from '../utils/constants';
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom';
 import ShimmerUI from './ShimmerUI';
