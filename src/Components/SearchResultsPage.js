@@ -11,12 +11,12 @@ import { setChannelId } from '../utils/channelIdSlice'
 const SearchResultsPage = () => {
   const [params]=useSearchParams();
   const query=params.get("q");
-  console.log(query)
+  // console.log(query)
   const [searchresults,setSearchResults]=useState([]);
   const dispatcher=useDispatch();
   useEffect(()=>{
     getSearchData();
-  },[])
+  },[query])
   // console.log(searchresults);
   const getSearchData=async ()=>{
     const data=await fetch(Search_results_api+query+"&key="+Google_api_key);
