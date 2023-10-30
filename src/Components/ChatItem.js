@@ -2,6 +2,7 @@ import React from 'react'
 import { user_icon } from '../utils/paths'
 import { BiUserCircle } from 'react-icons/bi'
 
+// Representation of Each Chat Item
 const ChatItem = ({name,text}) => {
   return (
     <div className='p-2 flex items-center bg-gray-50 mb-2 dark:bg-slate-800 dark:text-white'>

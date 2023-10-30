@@ -22,8 +22,10 @@ const Head = () => {
   const suggestions=useSelector((store)=> store.search);
 
   const [darkMode,setDarkMode]=useState(false);
+  // setting Initial theme to Light Mode
   document.documentElement.classList.toggle('dark', darkMode);
 
+  // DarkMode toggling
   const toggletheme=()=>{
     
     setDarkMode(!darkMode);
@@ -31,14 +33,15 @@ const Head = () => {
     
   }
 
-
+  // Toggle NavBar
   const HamburgerOnClickHandler=()=>{
     dispather(toggleMenu());
   }
   
   useEffect(()=>{
-
+    // Lateny of 200 ms is Set
     const Timer=setTimeout(()=>{
+      // Checking in CacheSlice - Debouncing
       if(suggestions[QueryText]){
         setSearchSuggestions(suggestions[QueryText]);
       }
@@ -53,6 +56,8 @@ const Head = () => {
     }
   },[QueryText])
 
+
+  // API Data for suggestions in Search Bar
   const getData=async ()=>{
     const data=await fetch(youtube_search_api+QueryText);
     const json=await data.json();
@@ -60,6 +65,7 @@ const Head = () => {
     dispather(AddCacheItem({[QueryText]:json[1]}))
   }
 
+  // Handling event when clicked enter in search bar
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log("Navigate");
@@ -79,7 +85,6 @@ const Head = () => {
       </div>
 
       {/* Search */}
-
       <div className="col-span-10 ml-24">
         <div className='group flex flex-row'>
           <input 
@@ -93,9 +98,12 @@ const Head = () => {
           onFocus={()=>{
             setshowSuggestions(true);
           }}
+          // When not Focused Suggestions are removed
+          // Latency of 200s is kept to enable clicking suggestions so that this wont get triggered
           onBlur={() =>
            setTimeout(() => setshowSuggestions(false), 200)
            }
+          //  Checking which key is Entered
            onKeyDown={(e) => {
             if (e.key === 'Enter') {
               handleSubmit(e);
@@ -110,6 +118,7 @@ const Head = () => {
           navigate("/search?q="+QueryText,{ relative: "path" })}}>
           <GoSearch className='text-xl dark:text-white'/></button>
         </div>
+
         {/* Suggestions */}
         { showSuggestions && QueryText!="" &&
         <div className='fixed bg-white rounded-xl border border-gray-100 shadow-lg dark:bg-slate-800 dark:text-white'>

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { video_recommendations_api } from '../utils/paths';
 import RecVideo from './RecVideo';
-import ShimmerRecommemdeVideo from './ShimmerRecommemdeVideo';
+import ShimmerRecommemdedVideo from './ShimmerRecommemdedVideo';
 import { Link } from 'react-router-dom';
 
+// Recomendations that appear in Watch Page
 const Recommendations = () => {
     const channelId=useSelector((store)=> store.channelId.channelId);
     const [recVideoList,setRecVideoList]=useState(null);
@@ -12,30 +13,33 @@ const Recommendations = () => {
     useEffect(()=>{
       fetchData();
     },[])
+
     const fetchData=async ()=>{
       const data=await fetch(video_recommendations_api+channelId);
       const jsondata=await data.json();
       setRecVideoList(jsondata?.items);
-      // console.log(jsondata)
     }
+
+    // Shimmer UI until the Api data is Obtained
   return recVideoList==null?<div>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
-    <ShimmerRecommemdeVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
+    <ShimmerRecommemdedVideo/>
   </div>:(
     <div>
       {
+        // Recommended Video Lists
         recVideoList.map((recvideo,index)=> <Link to={"/watch?v="+recvideo?.contentDetails?.upload?.videoId} key={index}><RecVideo data={recvideo}/></Link> )
       }
     </div>

@@ -3,8 +3,8 @@ import { videoDetailsApi } from '../utils/paths';
 import { PublishedTimeOfVideo } from '../utils/PublishedData';
 import { abbreviateNumber } from 'js-abbreviation-number';
 
+// Each Video data in Recomendations
 const RecVideo = ({data}) => {
-    // console.log(data);
     const videoId=data?.contentDetails?.upload?.videoId;
     const [videoDetails,setVideoDetails]=useState(null);
     
@@ -16,10 +16,10 @@ const RecVideo = ({data}) => {
         const data=await fetch(videoDetailsApi+"&id="+videoId);
         const jsondata=await data.json();
         setVideoDetails(jsondata?.items[0]);
-        // console.log(jsondata);
     }
+
     // Load Shimmer UI Until it Reloads
-    if(videoDetails==null) return <div></div>
+    if(videoDetails==null) return <div>Loading...</div>
 
     // Details
     const {channelId,channelTitle,publishedAt,title}=videoDetails?.snippet;
@@ -29,9 +29,11 @@ const RecVideo = ({data}) => {
 
   return (
     <div className='grid grid-cols-12 flex mb-3 ml-1'>
+        {/* Thumbnail */}
         <div className='mr-2 col-span-5'>
             <img className='h-24 w-80 rounded-lg ' alt="thumbnail" src={url}/>
         </div>
+        {/* Video Details */}
         <div className='col-span-7'>
             <p className='line-clamp-2 mt-1 font-semibold text-sm'>{title}</p>
             <p className='line-clamp-1 text-sm text-gray-700 dark:text-slate-300'>{channelTitle}</p>

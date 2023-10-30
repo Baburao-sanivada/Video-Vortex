@@ -8,8 +8,8 @@ import {FiMoreVertical} from "react-icons/fi"
 const VideoComment = ({data}) => {
   
   data=data?.snippet?.topLevelComment?.snippet;
-  // console.log(data);
 
+  // Destructing the Data
   const {authorDisplayName,authorProfileImageUrl,likeCount,publishedAt,textDisplay}=data;
  
   return (
@@ -33,6 +33,8 @@ const VideoComment = ({data}) => {
             <AiOutlineDislike className='text-xl'/>
           </div>
         </div>
+
+        {/* More */}
         <div className='mr-3 mt-3 text-xl flex justify-end w-full'>
           <FiMoreVertical/>
         </div>

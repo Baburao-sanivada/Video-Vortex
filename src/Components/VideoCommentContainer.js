@@ -3,17 +3,19 @@ import { video_comments_details_api } from '../utils/paths';
 import VideoComment from './VideoComment';
 import { abbreviateNumber } from 'js-abbreviation-number';
 
+// Comments in the Watch Page
 const VideoCommentContainer = ({videoId,commentCount}) => {
     const [commentslist,setCommentslist]=useState(null);
 
+    // Called when Video Id is Chang(Helps while landing to Same page with Different Video Id-> Clicking on Recomendations)
     useEffect(()=>{
         fetchComments();
     },[videoId])
 
+    // Fetching Comments
     const fetchComments=async ()=>{
         const data=await fetch(video_comments_details_api+videoId);
         const jsonData=await data.json();
-        // console.log(jsonData);
         setCommentslist(jsonData.items);
     }
 

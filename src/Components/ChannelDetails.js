@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { channelImage_api } from '../utils/paths';
 import { abbreviateNumber } from 'js-abbreviation-number';
 
+// Channel Details of the Main Video in the Watch Page 
 const ChannelDetails = ({channelId,channelTitle}) => {
     const [details,setDetails]=useState(null);
     

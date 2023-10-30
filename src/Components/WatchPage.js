@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeMenu, toggleMenu } from '../utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
-import { CommentsContainer } from './CommentsContainer';
 import ChatContainer from './ChatContainer';
-import WpageVideDetails from './WpageVideDetails';
-import ReactPlayer from 'react-player';
+import WpageVideoDetails from './WpageVideoDetails';
 import Recommendations from './Recommendations';
 
+
+// Watch Page- opens when clicked on a video
 const WatchPage = () => {
     const dispatch=useDispatch();
     const [showChat,setShowLiveChat]=useState(false);
     const [URLSearchParams]=useSearchParams();
     const VideoId=URLSearchParams.get("v");
+
+    // Closing Side Bar When Landing in This Page
     useEffect(()=>{
       dispatch(closeMenu());
     },[])
@@ -21,6 +23,7 @@ const WatchPage = () => {
     <div className='p-2 w-full pl-10 grid grid-cols-12  dark:bg-slate-800 dark:text-white'>
       <div className='flex flex-col col-span-8 overflow-x-hidden mr-2'>
         <div className=''>
+          {/* Video Tab */}
         <iframe
                 data-testid="iframe"
                     width="100%"
@@ -34,8 +37,11 @@ const WatchPage = () => {
                 >
                 </iframe>
         </div>
-        <WpageVideDetails videoId={VideoId}/>
+        {/* Title,Description,Channel Details,Comments of Video */}
+        <WpageVideoDetails videoId={VideoId}/>
       </div>
+
+      {/* Live Chat and Recomendations Div */}
       <div className='col-span-4 p-1 hidden md:block'>
           <div className='w-full'>
               {showChat && <ChatContainer />}

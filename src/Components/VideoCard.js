@@ -3,22 +3,24 @@ import { abbreviateNumber } from 'js-abbreviation-number';
 import { channelImage_api } from '../utils/paths';
 import { useSelector } from 'react-redux';
 
+// Video Card for each video in Home Screen/Home Page
 const VideoCard = ({info}) => {
     const [channelImage,setChannelImage]=useState("");
     const {snippet,statistics}=info;
     const {channelTitle,channelId,title,thumbnails}=snippet;
 
+    // Subscribing to Store
     const isMenuOpen=useSelector((store)=> store.appSlice.isMenuOpen)
 
   useEffect(()=>{
     getChannelImage();
   },[])
 
+  // Getting Channel Image using ChannelId
   const getChannelImage=async ()=>{
     const data=await fetch(channelImage_api+"&id="+channelId);
     const json=await data.json();
     const url=json?.items[0]?.snippet?.thumbnails?.high?.url;
-    // console.log(url);
     setChannelImage(url)
   }
 

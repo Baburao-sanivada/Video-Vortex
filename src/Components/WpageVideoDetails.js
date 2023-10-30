@@ -10,9 +10,11 @@ import {FiMoreHorizontal} from "react-icons/fi"
 import VideoCommentContainer from './VideoCommentContainer';
 import { PublishedTimeOfVideo } from '../utils/PublishedData';
 
-
-const WpageVideDetails = ({videoId}) => {
+{/* Title,Description,Channel Details,Comments of Video  in Watch Page of Main Video*/}
+const WpageVideoDetails = ({videoId}) => {
     const [videoDetails,setvideoDetails]=useState(null);
+
+    // Called When VideoId is Changed
     useEffect(()=>{
         fetchData();
     },[videoId])
@@ -20,16 +22,18 @@ const WpageVideDetails = ({videoId}) => {
     const {channelId,channelTitle,description,tags,title,publishedAt}=videoDetails?.snippet || {};
     const {commentCount,likeCount,viewCount}=videoDetails?.statistics || {};
 
+    // Getting Details of The Video
     const fetchData=async ()=>{
         const data=await fetch(videoDetailsApi+"&id="+videoId);
         const json=await data.json();
-        // console.log(json.items[0])
         setvideoDetails(json?.items[0]);
     }
+
+    // Splicing the tags
     if(tags!=null){
         var tags_arr=tags.slice(0,5);
     } 
-    // const tags_arr=tags.slice(0,4);
+
   return videoDetails==null?<div></div>:(
         <div className='flex flex-col w-full'>
             {/* Video Title */}
@@ -41,6 +45,7 @@ const WpageVideDetails = ({videoId}) => {
                     <ChannelDetails channelId={channelId} channelTitle={channelTitle}/>
                     <div><button className='mx-4 p-2 px-4 bg-black text-white dark:bg-white dark:text-black rounded-full'>Subscribe</button></div>
                 </div>
+                {/* Likes and DisLikes */}
                 <div className='flex items-center'>
                     <div className='m-2  flex items-center bg-gray-100 dark:bg-slate-800 p-2 px-6 rounded-full dark:border border-white'>
                         <BiLike className='text-xl mr-1'/>
@@ -48,10 +53,14 @@ const WpageVideDetails = ({videoId}) => {
                         <p className='mx-1 '>|</p>
                         <BiDislike className='text-xl ml-1'/>
                     </div>
+
+                    {/* Share Button */}
                     <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between  dark:bg-slate-800 dark:border border-white'>
                         <PiShareFatThin className='text-xl mr-1'/>
                         <p className='font-medium ml-1'>Share</p>
                     </div>
+
+                    {/* More */}
                     <div className='bg-gray-100 p-2 rounded-full ml-2 dark:bg-slate-800 dark:border border-white'>
                         <FiMoreHorizontal/>
                 </div>
@@ -88,4 +97,4 @@ const WpageVideDetails = ({videoId}) => {
   )
 }
 
-export default WpageVideDetails
+export default WpageVideoDetails

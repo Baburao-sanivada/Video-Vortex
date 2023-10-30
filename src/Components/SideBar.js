@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { sideBarIconList } from '../utils/sideBarIconList';
 
+// Side Bar with Fixed Side Bar Items
 const SideBar = () => {
+  // Subscribe to Store
   const isMenuOpen=useSelector((store)=> store.appSlice.isMenuOpen);
   return !isMenuOpen?<></>:(
     <div className='hidden sm:block p-5 pt-1 pr-3 shadow-lg  bg-white dark:bg-slate-800 dark:text-slate-300'>

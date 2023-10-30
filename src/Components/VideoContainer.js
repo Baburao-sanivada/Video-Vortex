@@ -6,6 +6,7 @@ import ShimmerUI from './ShimmerUI';
 import { useDispatch } from 'react-redux';
 import { setChannelId } from '../utils/channelIdSlice';
 
+// Home Page Video Container Present in Main Container
 const VideoContainer = () => {
   const [videosList,setVideosList]=useState([]);
   const [scrolledDown,setScrollDown]=useState(false);
@@ -21,14 +22,12 @@ const VideoContainer = () => {
     const data=await fetch(youtube_video_api);
     const json=await data.json();
     var updatedData=videosList.concat(json.items);
-    // console.log(updatedData)
     setVideosList(updatedData);
     setScrollDown(false)
   }
 
   // Infinite Scroll
   const handleScroll = () => {
-    // console.log(window.innerHeight , document.documentElement.scrollTop, document.documentElement.offsetHeight)
     if (window.innerHeight + document.documentElement.scrollTop+1500 >= document.documentElement.offsetHeight) {
         setScrollDown(true);
     }
@@ -36,6 +35,7 @@ const VideoContainer = () => {
     
   };
   
+  // Enabling Infinite Scroll by calculating the width
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -47,6 +47,7 @@ const VideoContainer = () => {
       {
         videosList.length==0?<ShimmerUI/>:videosList.map((video,index)=> <Link key={video?.id+index}
          to={"/watch?v="+video?.id} 
+        //  Setting up the channelId To access in Watch Page
          onClick={()=>{dispatcher(setChannelId(video?.snippet?.channelId))
         }}><VideoCard  info={video}/></Link>)
       }

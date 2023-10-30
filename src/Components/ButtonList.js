@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
-
-const list=["All","Live","Gaming","Cricket","Music","Movies","Comedy","Action","Software","Computers"]
+// Sample Button List Without Functionality
+const list=["All","Live","Gaming","Cricket","Music","Movies","Comedy","Action","Software","ReactJs","Redux"]
 
 const ButtonList = () => {
   return (

@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import './App.css';
 import Body from './Components/Body';
-import Head from './Components/Head';
+import Header from './Components/Header';
 import { AppStore } from './utils/AppStore';
 import { Outlet, Router, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainContainer from './Components/MainContainer';
@@ -43,7 +43,8 @@ export const appRouter = createBrowserRouter([
 function App() {
   return (
     <Provider store={AppStore}>
-      <Head />
+      <Header />
+      {/* Here Outlet Gives the Child */}
       <Outlet />
     </Provider>
   )

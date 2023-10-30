@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ShimmerRecommemdeVideo = () => {
+// Shimmer UI for Recommended Video in Watch Page
+const ShimmerRecommemdedVideo = () => {
   return (
     <div className='h-24 grid grid-cols-12 bg-gray-50 mb-2 dark:bg-slate-800'>
         <div className='col-span-5 bg-gray-300 mr-2 rounded-lg dark:bg-slate-600'></div>
@@ -14,4 +15,4 @@ const ShimmerRecommemdeVideo = () => {
   )
 }
 
-export default ShimmerRecommemdeVideo
+export default ShimmerRecommemdedVideo
