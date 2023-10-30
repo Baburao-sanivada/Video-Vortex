@@ -69,7 +69,7 @@ const Head = () => {
         <IoIosMenu 
         onClick={HamburgerOnClickHandler}
         className="text-3xl dark:text-white cursor-pointer hidden sm:block"/>
-        <img className="h-6 mx-4" alt="youtubeLogo" src={darkMode?youtubelogoDarkMode:youtubelogoLightMode}></img>
+        <Link to="/"><img className="h-6 mx-4" alt="youtubeLogo" src={darkMode?youtubelogoDarkMode:youtubelogoLightMode}></img></Link>
       </div>
 
       {/* Search */}
@@ -78,7 +78,7 @@ const Head = () => {
         <div className='group flex flex-row'>
           <input 
           value={QueryText}
-          className="w-2/3 border border-gray-400 rounded-l-full py-1 pl-5 group-focus-within:border-sky-300 dark:bg-slate-800" 
+          className="w-2/3 border border-gray-400 rounded-l-full py-1 pl-5 group-focus-within:border-sky-300 dark:bg-slate-800 dark:text-white" 
           type='text'
           placeholder='Search'
           onChange={(e)=>{
@@ -100,11 +100,11 @@ const Head = () => {
         </div>
         {/* Suggestions */}
         { showSuggestions && QueryText!="" &&
-        <div className='fixed bg-white rounded-xl border border-gray-100 shadow-lg'>
+        <div className='fixed bg-white rounded-xl border border-gray-100 shadow-lg dark:bg-slate-800 dark:text-white'>
           <div className=' py-2'>
           <ul>
             {searchSuggestions.map((s,index)=> 
-            (<li key={"s"+index} className='hover:bg-gray-100'>
+            (<li key={"s"+index} className='hover:bg-gray-100 dark:hover:bg-slate-700'>
               <Link to={"/search?q="+s} onClick={()=>setQueryText(s)}><div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'><GoSearch className='text-lg m-2 mr-4'/> <span className='mb-1'>{s}</span></div></Link>
               </li>))}
           </ul>
