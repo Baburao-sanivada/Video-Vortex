@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { closeMenu, toggleMenu } from '../utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
 import { CommentsContainer } from './CommentsContainer';
@@ -12,16 +12,11 @@ const WatchPage = () => {
     const dispatch=useDispatch();
     const [showChat,setShowLiveChat]=useState(false);
     const [URLSearchParams]=useSearchParams();
-    const Videoid=URLSearchParams.get("v");
-    const [VideoId,setVideoId]=useState(Videoid);
-   
-    // setVideoId(Videoid)
-    
+    const VideoId=URLSearchParams.get("v");
     useEffect(()=>{
       dispatch(closeMenu());
-      console.log("In UseEffect"+Videoid);
-      console.log("state Var val"+VideoId);
-    },[Videoid])
+    },[])
+
   return (
     <div className='p-2 w-full pl-10 grid grid-cols-12  dark:bg-slate-800 dark:text-white'>
       <div className='flex flex-col col-span-8 overflow-x-hidden mr-2'>

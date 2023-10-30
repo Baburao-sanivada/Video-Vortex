@@ -12,11 +12,10 @@ import { PublishedTimeOfVideo } from '../utils/PublishedData';
 
 
 const WpageVideDetails = ({videoId}) => {
-
     const [videoDetails,setvideoDetails]=useState(null);
     useEffect(()=>{
         fetchData();
-    },[])
+    },[videoId])
 
     const {channelId,channelTitle,description,tags,title,publishedAt}=videoDetails?.snippet || {};
     const {commentCount,likeCount,viewCount}=videoDetails?.statistics || {};

@@ -60,6 +60,12 @@ const Head = () => {
     dispather(AddCacheItem({[QueryText]:json[1]}))
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log("Navigate");
+    navigate("/search?q="+QueryText,{ relative: "path" })
+    setshowSuggestions(false);
+}
 
   return (
     <div className="sticky top-0 grid grid-flow-col py-3 px-3 bg-white dark:bg-slate-800 w-full">
@@ -87,7 +93,15 @@ const Head = () => {
           onFocus={()=>{
             setshowSuggestions(true);
           }}
-          onBlur={() => setTimeout(() => setshowSuggestions(false), 200)}/>
+          onBlur={() =>
+           setTimeout(() => setshowSuggestions(false), 200)
+           }
+           onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleSubmit(e);
+            }
+          }}
+           />
 
           {/* Search Button */}
           <button 

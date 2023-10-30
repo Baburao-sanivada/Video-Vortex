@@ -8,7 +8,7 @@ const VideoCommentContainer = ({videoId,commentCount}) => {
 
     useEffect(()=>{
         fetchComments();
-    },[])
+    },[videoId])
 
     const fetchComments=async ()=>{
         const data=await fetch(video_comments_details_api+videoId);
