@@ -36,7 +36,7 @@ const Recommendations = () => {
   </div>:(
     <div>
       {
-        recVideoList.map((recvideo)=> <Link to={"/watch?v="+recvideo?.contentDetails?.upload?.videoId}><RecVideo data={recvideo}/></Link> )
+        recVideoList.map((recvideo,index)=> <Link to={"/watch?v="+recvideo?.contentDetails?.upload?.videoId} key={index}><RecVideo data={recvideo}/></Link> )
       }
     </div>
   )

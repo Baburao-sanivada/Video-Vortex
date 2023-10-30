@@ -87,9 +87,7 @@ const Head = () => {
           onFocus={()=>{
             setshowSuggestions(true);
           }}
-          onBlur={()=>{
-            setshowSuggestions(false);
-          }}/>
+          onBlur={() => setTimeout(() => setshowSuggestions(false), 200)}/>
 
           {/* Search Button */}
           <button 
@@ -105,7 +103,7 @@ const Head = () => {
           <ul>
             {searchSuggestions.map((s,index)=> 
             (<li key={"s"+index} className='hover:bg-gray-100 dark:hover:bg-slate-700'>
-              <Link to={"/search?q="+s} onClick={()=>setQueryText(s)}><div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'><GoSearch className='text-lg m-2 mr-4'/> <span className='mb-1'>{s}</span></div></Link>
+              <Link to={"/search?q="+s} onClick={()=>setQueryText(s)} ><div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'><GoSearch className='text-lg m-2 mr-4'/> <span className='mb-1'>{s}</span></div></Link>
               </li>))}
           </ul>
         </div>
