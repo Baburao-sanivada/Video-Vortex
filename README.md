@@ -27,13 +27,26 @@ Functionality of the APP
 
 
 
+
+
+
 2. Home Page in DarkMode
 
 ![Home page](./Images/HomePage%20DarkMode.png)
 
+
+
+
+
+
 3. Toggling Side Bar by clicking on Toggler
 
 ![Side Bar Closed](./Images/SideBar%20Toggle.png)
+
+
+
+
+
 
 
 
@@ -43,9 +56,19 @@ Functionality of the APP
 
 
 
+
+
+
+
+
 5. Clicking on Music in Side Bar
 
 ![Music-Results](./Images/Music-SideBar.png)
+
+
+
+
+
 
 
 
@@ -55,9 +78,19 @@ Functionality of the APP
 
 
 
+
+
+
+
+
 7. Search Suggestions While Entering Data in Search Bar
 
 ![Search Suggestions](./Images/SearchSuggestions.png)
+
+
+
+
+
 
 
 
@@ -67,15 +100,30 @@ Functionality of the APP
 
 
 
+
+
+
+
+
 9. Watch Page and recomendations- When Clicked on a video
 
 ![Watch Page](./Images/WatchPage.png)
 
 
 
+
+
+
+
+
 10. Watch Page Video Details and Recomendations
 
 ![watch page Video Details](./Images/WPVideo%20Details.png)
+
+
+
+
+
 
 
 
