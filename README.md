@@ -83,6 +83,7 @@ This will launch the application locally for testing and development.
 
 We welcome contributions to this project. If you have ideas for improvements or find any issues, please open an issue or submit a pull request.
 
+## Google API Key
 To obtain a Google API Key for this project, follow these steps:
 
 1. Go to the Google Developer Console.
