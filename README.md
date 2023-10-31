@@ -57,7 +57,7 @@ This will launch the application locally for testing and development.
 
 ### Enabling Infinite Scroll While Scrolled Down
 
-![Infinite Scroll in Home Page](./Images/Infinite-Scroll.png)
+![Infinite Scroll in Home Page](./Images/Infinte-Scroll.png)
 
 ### Search Suggestions While Entering Data in the Search Bar
 
