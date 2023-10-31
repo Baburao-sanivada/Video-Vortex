@@ -1,3 +1,47 @@
+# YouTube Clone with React and Redux Toolkit
+
+This is a YouTube clone built using React and Redux Toolkit.
+
+## Project Setup
+
+Basic code setup was done using `create-react-app`. For routing, we used React Router, and for bundling, we used Parcel. Babel was used as the transcompiler.
+
+## Project Structure
+
+The project structure and the functioning of each component are described below:
+
+- `src/` directory contains the source code for the project.
+
+  - `components/`: This directory contains various components used in the project. Each component is documented with comments explaining its functionality.
+
+  - `App.js`: The main application component.
+
+  - `index.js`: The entry point of the application.
+
+  - ...
+
+## Getting Started
+
+To run this project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+
+2. Navigate to the project directory.
+
+3. Install the required dependencies using `npm install`.
+
+4. Start the development server with `npm start`.
+
+This will launch the application locally for testing and development.
+
+## Contributions
+
+We welcome contributions to this project. If you have ideas for improvements or find any issues, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
 
 -> This Is a Youtube Clone Done Using React And Redux Tool Kit
 -> Basic Code is Obtained Using "npm create-react-app"
@@ -8,15 +52,6 @@
 
 
 
-
-To run on Local Server
--> git clone https://github.com/Baburao-sanivada/YOUTUBE_CLONE.git
--> npm install (Install All Dependencies)
--> npm run/npm run start
-
-
-->npm run Build 
-Builds the app for production to the build folder.
 
 
 Functionality of the APP
