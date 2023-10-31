@@ -16,8 +16,7 @@ export const channelImage_api="https://youtube.googleapis.com/youtube/v3/channel
 export const video_comments_details_api="https://www.googleapis.com/youtube/v3/commentThreads?textFormat=plainText&part=snippet&maxResults=100&order=relevance&key="+Google_api_key+"&videoId="
 var nameList = [
     'Adil', 'Babu', 'Afroz', 'Kiran',
-    'Vinay', 'Balu', 'Hk', 'Yaswanth', 'Sai Teja', 'Sagar',
-    'Nandu', 'Rohit', 'chandu', 'mohan', 'Raju', 'usha'
+    'Vinay', 'Balu', 'Hk', 'Sai Teja'
   ];
 export function generateRandomName() {
         return nameList[Math.floor(Math.random() * nameList.length)];
