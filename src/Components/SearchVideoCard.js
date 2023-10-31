@@ -25,9 +25,9 @@ const SearchVideoCard = ({data}) => {
 
 
   return (
-    <div className='flex bg-gray-50 py-2 dark:bg-slate-800'>
+    <div className='flex max-sm:flex-col flex-row bg-gray-50 py-2 dark:bg-slate-800 max-sm:px-10 max-sm:pb-10'>
       {/* Thumbnail */}
-        <img className="rounded-lg" src={data?.thumbnails?.medium?.url}/>
+        <img className="flex justify-center rounded-lg h-40 max-sm:w-full" src={data?.thumbnails?.medium?.url}/>
         {/* Video Details */}
         <div className='px-2 w-full flex flex-col'>
             <span className='font-semibold text-lg dark:text-white'>{data?.title}</span>

@@ -39,13 +39,13 @@ const WpageVideoDetails = ({videoId}) => {
             <div className='my-2 font-semibold text-lg'>{title}</div>
 
             {/* Channel Details And lIkes */}
-            <div className='flex items-center my-2 justify-between '>
-                <div className='flex items-center'>
+            <div className='flex items-center my-2 justify-between'>
+                <div className='flex items-center '>
                     <ChannelDetails channelId={channelId} channelTitle={channelTitle}/>
                     <div><button className='mx-4 p-2 px-4 bg-black text-white dark:bg-white dark:text-black rounded-full'>Subscribe</button></div>
                 </div>
                 {/* Likes and DisLikes */}
-                <div className='flex items-center'>
+                <div className='flex items-center hidden md:block'>
                     <div className='m-2  flex items-center bg-gray-100 dark:bg-slate-800 p-2 px-6 rounded-full dark:border border-white'>
                         <BiLike className='text-xl mr-1'/>
                         <p className='mx-1 text-sm'>{abbreviateNumber(likeCount)}</p>
@@ -54,13 +54,13 @@ const WpageVideoDetails = ({videoId}) => {
                     </div>
 
                     {/* Share Button */}
-                    <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between  dark:bg-slate-800 dark:border border-white'>
+                    <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between  dark:bg-slate-800 dark:border border-white hidden md:block'>
                         <PiShareFatThin className='text-xl mr-1'/>
                         <p className='font-medium ml-1'>Share</p>
                     </div>
 
                     {/* More */}
-                    <div className='bg-gray-100 p-2 rounded-full ml-2 dark:bg-slate-800 dark:border border-white'>
+                    <div className='bg-gray-100 p-2 rounded-full ml-2 dark:bg-slate-800 dark:border border-white hidden md:block '>
                         <FiMoreHorizontal/>
                 </div>
                 </div>
@@ -71,7 +71,7 @@ const WpageVideoDetails = ({videoId}) => {
                 {/* viewCount and Date */}
                 <div className='lg:flex'>
                     <p className='flex'><span className='font-semibold mr-2'>{abbreviateNumber(viewCount)}</span> views</p>
-                    <p className='ml-2 font-medium'>{PublishedTimeOfVideo(publishedAt)}</p>
+                    <p className='lg:ml-2 font-medium'>{PublishedTimeOfVideo(publishedAt)}</p>
                     {tags!=null && tags.length>0} && <p className='text-blue-800 dark:text-blue-500'>#{tags[0]}</p>
                     {tags!=null && tags.length>1} && <p className='text-blue-800 dark:text-blue-500'>#{tags[1]}</p>
                     {tags!=null && tags.length>2} && <p className='text-blue-800 dark:text-blue-500'>#{tags[2]}</p>

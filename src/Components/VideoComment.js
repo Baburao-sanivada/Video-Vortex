@@ -21,7 +21,7 @@ const VideoComment = ({data}) => {
         <div className=' w-full'>
           <div className='flex'>
             <p className='mr-2 text-base font-semibold'>@{authorDisplayName.split(" ").join("")}</p>
-            <p>{publishedAt.split("T")[0]}</p>
+            <p className=''>{publishedAt.split("T")[0]}</p>
           </div>
           {/* Comment Text */}
           <p className=''>{textDisplay}</p>
