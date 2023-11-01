@@ -5,6 +5,7 @@ import SearchVideoCard from './SearchVideoCard'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setChannelId } from '../utils/channelIdSlice'
+import { closeMenu } from '../utils/appSlice'
 
 // Search Results
 const SearchResultsPage = () => {
@@ -15,6 +16,7 @@ const SearchResultsPage = () => {
 
   useEffect(()=>{
     getSearchData();
+    dispatcher(closeMenu())
   },[query])
 
   const getSearchData=async ()=>{
@@ -24,7 +26,7 @@ const SearchResultsPage = () => {
   } 
 
   return (
-    <div className='p-2 w-full dark:bg-slate-800'>
+    <div className='p-2 w-full dark:bg-slate-800 overflow-y-hidden'>
       {
         searchresults.map((result)=> <Link 
         key={result?.id?.videoId} 
