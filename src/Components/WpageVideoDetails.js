@@ -45,16 +45,16 @@ const WpageVideoDetails = ({videoId}) => {
                     <div><button className='mx-4 p-2 px-4 bg-black text-white dark:bg-white dark:text-black rounded-full'>Subscribe</button></div>
                 </div>
                 {/* Likes and DisLikes */}
-                <div className='flex items-center hidden md:block'>
+                <div className='flex items-center max-sm:hidden'>
                     <div className='m-2  flex items-center bg-gray-100 dark:bg-slate-800 p-2 px-6 rounded-full dark:border border-white'>
                         <BiLike className='text-xl mr-1'/>
                         <p className='mx-1 text-sm'>{abbreviateNumber(likeCount)}</p>
-                        <p className='mx-1 '>|</p>
+                        <p className='mx-1'>|</p>
                         <BiDislike className='text-xl ml-1'/>
                     </div>
 
                     {/* Share Button */}
-                    <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between  dark:bg-slate-800 dark:border border-white hidden md:block'>
+                    <div className='m-2 flex items-center text-center bg-gray-100 p-2 px-6 rounded-full justify-between  dark:bg-slate-800 dark:border border-white '>
                         <PiShareFatThin className='text-xl mr-1'/>
                         <p className='font-medium ml-1'>Share</p>
                     </div>
