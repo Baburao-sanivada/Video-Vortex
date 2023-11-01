@@ -81,8 +81,6 @@ const Head = () => {
 
   return (
     <div className="sticky top-0 grid grid-flow-col py-3 md:px-3 px-1 bg-white dark:bg-slate-800 w-full">
-      
-      Leo Songs
 
       {/* Arrow Left In sm Search To Move to normal Screen */}
       {smSearch && 
