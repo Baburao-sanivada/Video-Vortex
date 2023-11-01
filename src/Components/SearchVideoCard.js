@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { channelImage_api } from '../utils/constants';
 import { PublishedTimeOfVideo } from '../utils/PublishedData';
+import SearchShimmer from './SearchShimmer';
 
 // Each Video Card in Search Results Page
 const SearchVideoCard = ({data}) => {
@@ -20,7 +21,7 @@ const SearchVideoCard = ({data}) => {
   }
 
   // Loading Shimmer
-  if(details==null) return <div>Loading...</div>
+  if(details==null) return <SearchShimmer/>
   const imgUrl=details?.items[0].snippet?.thumbnails?.high?.url || {};
 
 
