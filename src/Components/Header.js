@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import youtubelogoLightMode from "../utils/Images/youtubelogoLightMode.png"
 import youtubelogoDarkMode from "../utils/Images/yt-logoDrakMode.png"
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleMenu } from '../utils/appSlice';
+import { closeMenu, setMenu, toggleMenu } from '../utils/appSlice';
 import {youtube_search_api} from "../utils/constants"
 import { AddCacheItem } from '../utils/searchCacheSlice';
 import {BiUserCircle} from "react-icons/bi";
@@ -23,6 +23,8 @@ const Head = () => {
   const suggestions=useSelector((store)=> store.search);
 
   const [darkMode,setDarkMode]=useState(false);
+
+  
   // setting Initial theme to Light Mode
   document.documentElement.classList.toggle('dark', darkMode);
 
@@ -38,7 +40,11 @@ const Head = () => {
   const HamburgerOnClickHandler=()=>{
     dispather(toggleMenu());
   }
-  
+  useEffect(()=>{
+    // Hiding SideBar Intially for Sm Screens
+    if(window.innerWidth<768) dispather(closeMenu());
+
+  },[])
   useEffect(()=>{
     // Lateny of 200 ms is Set
     const Timer=setTimeout(()=>{
@@ -50,8 +56,7 @@ const Head = () => {
         getData();
       }
     },200);
-
-
+    
     return ()=>{
       clearTimeout(Timer);
     }
