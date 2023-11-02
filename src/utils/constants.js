@@ -1,5 +1,5 @@
 
-export const Google_api_key="AIzaSyAHGUj_LMXgqEcWo_itMkkbleOUDT2Go0Q"
+export const Google_api_key="AIzaSyCAX7aVBjRq-_byIclKfbRJO_5y36IT7dA"
 
 export const video_recommendations_api=`https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=50&regionCode=in&key=${Google_api_key}&channelId=`
 
