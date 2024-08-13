@@ -1,29 +1,19 @@
-export const Google_api_key = "AIzaSyC9hgB4pfQxk9V2cZmvq2si_LTXpsIvu2Q";
+const Base_Url = "https://video-vortex-backend-n3zc.onrender.com";
 
-export const video_recommendations_api = `https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=50&regionCode=in&key=${Google_api_key}&channelId=`;
+export const video_recommendations_api = `${Base_Url}/video/recommendations?channelId=`;
 
-export const videoDetailsApi =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=" +
-  Google_api_key;
+export const videoDetailsApi = `${Base_Url}/video/details?videoId=`;
 
-export const youtube_video_api =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
-  Google_api_key;
+export const youtube_video_api = `${Base_Url}/home/getRecommendations`;
 
-export const youtube_search_api =
-  "https://corsproxy.io/?http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const youtube_search_api = `${Base_Url}/search/suggestions?searchText=`;
 
-export const Search_results_api =
-  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=";
+export const Search_results_api = `${Base_Url}/search/searchResults?searchItem=`;
 
-export const channelImage_api =
-  "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&key=" +
-  Google_api_key;
+export const channelImage_api = `${Base_Url}/video/channelImage?channelId=`;
 
-export const video_comments_details_api =
-  "https://www.googleapis.com/youtube/v3/commentThreads?textFormat=plainText&part=snippet&maxResults=100&order=relevance&key=" +
-  Google_api_key +
-  "&videoId=";
+export const video_comments_details_api = `${Base_Url}/video/comments?videoId=`;
+
 var nameList = [
   "Adil",
   "Babu",
